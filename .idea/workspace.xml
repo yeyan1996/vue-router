@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b730c25-4d04-4de7-983e-bc2b37fb8bff" name="默认" comment="">
+      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.flowconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/007.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vue-router-dev.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/configs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/rollup.dev.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/vue-router.common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/vue-router.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/vue-router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/vue-router.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/LANGS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/assets/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/assets/circle.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/book.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/de/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/es/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/fr/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/gitbook/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ja/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/kr/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/old/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/old/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/SUMMARY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/component-injections.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/route-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/router-instance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/router-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/api/router-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-gitbook/ru/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/components/Bit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/_redirects" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/style.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fr/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ja/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/kr/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ru/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/data-fetching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/lazy-loading.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/meta.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/navigation-guards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/scroll-behavior.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/advanced/transitions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/dynamic-matching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/history-mode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/named-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/named-views.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/navigation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/nested-routes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/passing-props.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/guide/essentials/redirect-and-alias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/zh/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/active-links/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/active-links/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/components/About.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/components/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/components/Dashboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/components/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/auth-flow/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/basic/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/basic/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/data-fetching/Post.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/data-fetching/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/data-fetching/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/data-fetching/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/discrete-components/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/discrete-components/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/hash-mode/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/hash-mode/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/hash-scroll-behavior/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/hash-scroll-behavior/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/lazy-loading/Bar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/lazy-loading/Baz.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/lazy-loading/Foo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/lazy-loading/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/lazy-loading/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/named-routes/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/named-routes/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/named-views/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/named-views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/navigation-guards/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/navigation-guards/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/nested-router/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/nested-router/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/nested-routes/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/nested-routes/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/redirect/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/redirect/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-alias/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-alias/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-matching/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-matching/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-props/Hello.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-props/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/route-props/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/scroll-behavior/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/scroll-behavior/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/transitions/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/transitions/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flow/declarations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/release.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/verifyCommitMsg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/create-matcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/create-route-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/history/abstract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/history/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/history/hash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/history/html5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/install.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/misc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/params.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/path.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/push-state.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/resolve-components.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/warn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/nightwatch.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/active-links.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/auth-flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/basic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/data-fetching.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/hash-mode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/hash-scroll-behavior.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/lazy-loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/named-routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/named-views.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/navigation-guards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/nested-router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/nested-routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/redirect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/route-alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/route-matching.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/route-props.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/scroll-behavior.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2e/specs/transitions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/jasmine.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/api.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/async.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/create-map.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/create-matcher.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/custom-query.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/discrete-components.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/error-handling.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/location.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/node.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/path.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/query.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/specs/route.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/router.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/test/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/test/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/vue.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/dist/" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1364">
+              <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#13#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-matcher.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/create-matcher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-269">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#13#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="location.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/location.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RouteRecord</find>
+      <find>install</find>
+      <find>normalizePath</find>
+      <find>record</find>
+      <find>parent</find>
+      <find>addRouteRecord</find>
+      <find>pathMap</find>
+      <find>*</find>
+      <find>init</find>
+      <find>addRoutes</find>
+      <find>matcher</find>
+      <find>raw</find>
+      <find>match</find>
+      <find>history</find>
+      <find>matchRoute</find>
+      <find>push</find>
+      <find>no ma</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.eslintrc" />
+        <option value="$PROJECT_DIR$/src/install.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/create-route-map.js" />
+        <option value="$PROJECT_DIR$/src/history/base.js" />
+        <option value="$PROJECT_DIR$/src/util/path.js" />
+        <option value="$PROJECT_DIR$/src/util/route.js" />
+        <option value="$PROJECT_DIR$/src/util/location.js" />
+        <option value="$PROJECT_DIR$/src/create-matcher.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="425" />
+    <option name="width" value="1155" />
+    <option name="height" value="1060" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vue-router-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-router-dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue-router-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-router-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue-router-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-router-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\zhl\Desktop\vue-router-dev\node_modules\eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\zhl\Desktop\vue-router-dev\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b730c25-4d04-4de7-983e-bc2b37fb8bff" name="默认" comment="" />
+      <created>1545446676885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545446676885</updated>
+      <workItem from="1545446678556" duration="27947000" />
+      <workItem from="1545548830317" duration="275000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="28222000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.16182299" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="调试" order="4" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5006605" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4993395" visible="true" weight="0.21112697" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32905984" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#13#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/location.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/create-matcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#13#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/create-matcher.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/data-fetching/Post.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/auth-flow/components/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1612">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/push-state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/install.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/warn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/history/html5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flow/declarations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="79" column="21" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/history/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/history/hash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="8494" column="10" selection-start-line="8494" selection-start-column="10" selection-end-line="8494" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/location.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/create-route-map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="87" column="41" lean-forward="true" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#13#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/path.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/path.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/location.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1075">
+            <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/create-matcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#13#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

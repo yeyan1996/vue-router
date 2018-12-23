@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "plugins": [
+    "flowtype"
+  ],
+  "extends": [
+    "plugin:vue-libs/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "rules": {
+    "indent": 0,
+    "no-trailing-spaces":0
+  }
+}
