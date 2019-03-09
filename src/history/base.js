@@ -63,7 +63,7 @@ export class History {
   // this指向相应的history路由实例（HashHistory | HTML5History）
   // location为跳转的路由信息
   transitionTo (location: RawLocation, onComplete?: Function, onAbort?: Function) {
-    // 这里this.router是相应的history路由实例（HashHistory | HTML5History）的router属性，指向的是传入的参数router也就是VueRouter的实例router对象
+// 这里this.router是相应的history路由实例（HashHistory | HTML5History）的router属性,指向的是传入的参数router也就是VueRouter的实例router对象
       // 执行router对象的match方法返回route
     const route = this.router.match(location, this.current)
     this.confirmTransition(route, () => {
@@ -86,7 +86,8 @@ export class History {
       }
     })
   }
-
+ // 路由跳转中执行的函数
+  // 传入route对象，成功回调和失败回调
   confirmTransition (route: Route, onComplete: Function, onAbort?: Function) {
     const current = this.current
     const abort = err => {
@@ -100,12 +101,14 @@ export class History {
       }
       onAbort && onAbort(err)
     }
+    // 如果是相同路径
     if (
       isSameRoute(route, current) &&
       // in the case the route map has been dynamically appended to
       route.matched.length === current.matched.length
     ) {
       this.ensureURL()
+        // 取消路由跳转
       return abort()
     }
 
@@ -113,10 +116,15 @@ export class History {
       updated,
       deactivated,
       activated
+        // this.current指的是当前路由，route是跳转路由
     } = resolveQueue(this.current.matched, route.matched)
 
+      // queue是NavigationGuard组成的数组
+      // NavigationGuard是路由守卫的函数，传入to,from,next3个参数
+      // 这里对应文档的《完整的导航解析流程》
     const queue: Array<?NavigationGuard> = [].concat(
       // in-component leave guards
+        // 触发beforeRouteLeave
       extractLeaveGuards(deactivated),
       // global before hooks
       this.router.beforeHooks,
@@ -125,6 +133,7 @@ export class History {
       // in-config enter guards
       activated.map(m => m.beforeEnter),
       // async components
+        // 解析异步组件
       resolveAsyncComponents(activated)
     )
 
@@ -137,6 +146,7 @@ export class History {
         hook(route, current, (to: any) => {
           if (to === false || isError(to)) {
             // next(false) -> abort navigation, ensure current URL
+              // 如果传入的是next(false)会中断导航，文档上有，并且会重置到form的路由
             this.ensureURL(true)
             abort(to)
           } else if (
@@ -155,6 +165,7 @@ export class History {
             }
           } else {
             // confirm transition and pass on the value
+              // 继续执行runQueue函数
             next(to)
           }
         })
@@ -162,6 +173,8 @@ export class History {
         abort(e)
       }
     }
+   // 等到队列中所有的组件（懒加载的组件）都解析完毕后才执行第三个参数回调
+      // 即为什么beforeRouteEnter钩子需要在next回调中执行的原因
 
     runQueue(queue, iterator, () => {
       const postEnterCbs = []
@@ -215,6 +228,7 @@ function normalizeBase (base: ?string): string {
   return base.replace(/\/$/, '')
 }
 
+// 计算出当前路由和跳转路由在路径上的相同点不同点
 function resolveQueue (
   current: Array<RouteRecord>,
   next: Array<RouteRecord>
@@ -231,8 +245,11 @@ function resolveQueue (
     }
   }
   return {
+    // 相同的match数组
     updated: next.slice(0, i),
+      // 新增match数组
     activated: next.slice(i),
+      // 删除match数组
     deactivated: current.slice(i)
   }
 }
@@ -243,14 +260,22 @@ function extractGuards (
   bind: Function,
   reverse?: boolean
 ): Array<?Function> {
+  // 遍历records数组，每次执行第二个函数
+    // def为一个组件
+    // instance为实例
+    // match为record
+    // key为识图名字（一般为default）
   const guards = flatMapComponents(records, (def, instance, match, key) => {
+    // name为路由钩子的名字
     const guard = extractGuard(def, name)
     if (guard) {
       return Array.isArray(guard)
+          // 让instance作为函数的上下文
         ? guard.map(guard => bind(guard, instance, match, key))
         : bind(guard, instance, match, key)
     }
   })
+    // 倒序这个数据，之前是父=》子，由于子路由需要先离开所以要倒序一下数组
   return flatten(reverse ? guards.reverse() : guards)
 }
 
@@ -258,6 +283,7 @@ function extractGuard (
   def: Object | Function,
   key: string
 ): NavigationGuard | Array<NavigationGuard> {
+  // 如果不是懒加载
   if (typeof def !== 'function') {
     // extend now so that global mixins are applied.
     def = _Vue.extend(def)
@@ -291,6 +317,7 @@ function extractEnterGuards (
   })
 }
 
+// guard为beforeRouteEnter这个函数 function (to,from,next){.......}
 function bindEnterGuard (
   guard: NavigationGuard,
   match: RouteRecord,
@@ -299,6 +326,7 @@ function bindEnterGuard (
   isValid: () => boolean
 ): NavigationGuard {
   return function routeEnterGuard (to, from, next) {
+    // 将用户定义的cb(beforeRouteEnter钩子的next(vm=>{......}))传入next函数
     return guard(to, from, cb => {
       next(cb)
       if (typeof cb === 'function') {

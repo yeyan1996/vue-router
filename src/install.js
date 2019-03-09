@@ -23,10 +23,10 @@ export function install (Vue) {
     beforeCreate () {
       // this指向调用beforeCreate的对象(Vue的根实例/组件)
       // 每次一个组件初始化的时候都会调用beforeCreate方法执行相应函数
-      if (isDef(this.$options.router)) { // 如果是Vue的根实例，即整个Vue组件初始化的时候(this,$options.router等于在Vue构造函数传入的router对象)
+      if (isDef(this.$options.router)) { // 如果是Vue的根实例，即整个Vue组件初始化的时候(this.$options.router等于在Vue构造函数传入的router对象)
         this._routerRoot = this // 将routerRoot等于Vue
         this._router = this.$options.router // 给根实例添加_router属性等于router对象
-        this._router.init(this) // 执行init方法传入根实力（即在index.js中VueRouter这个class的init方法）
+        this._router.init(this) // 执行init方法传入根实例（即在index.js中VueRouter这个class的init方法）
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else {
           // 不是Vue的根实例则组件的_routerRoot等于Vue根实例

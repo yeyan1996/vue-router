@@ -27,6 +27,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
           def.resolved = typeof resolvedDef === 'function'
             ? resolvedDef
             : _Vue.extend(resolvedDef)
+            // 将解析后的组件对象赋值给路由中components
           match.components[key] = resolvedDef
           pending--
           if (pending <= 0) {
@@ -69,11 +70,15 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
   }
 }
 
+// 扁平化后执行fn作为返回值
 export function flatMapComponents (
   matched: Array<RouteRecord>,
   fn: Function
 ): Array<?Function> {
+  // 数组扁平化
   return flatten(matched.map(m => {
+    // 遍历components属性（一般为component，vue-router会把component变成components，因为有命名视图的可能）
+      // 如果是components衍变的key为default，否则为自己定义的key值
     return Object.keys(m.components).map(key => fn(
       m.components[key],
       m.instances[key],

@@ -56,8 +56,10 @@ export const START = createRoute(null, {
   path: '/'
 })
 
+// 根据当前路径匹配到的record生成一个match数组
 function formatMatch (record: ?RouteRecord): Array<RouteRecord> {
   const res = []
+    // 递归遍历当前路由和所有父路由放入match数组中 [父=》子]
   while (record) {
     res.unshift(record)
     record = record.parent
