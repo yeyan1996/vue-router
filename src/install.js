@@ -21,8 +21,7 @@ export function install (Vue) {
 
   Vue.mixin({
     beforeCreate () {
-      // this指向调用beforeCreate的对象(Vue的根实例/组件)
-      // 每次一个组件初始化的时候都会调用beforeCreate方法执行相应函数
+      // 通过全局混入,向根实例注入_routerRoot等于Vue/_router属性等于router路由的实例，向所有的组件实例注入_routerRoot属性，
       if (isDef(this.$options.router)) { // 如果是Vue的根实例，即整个Vue组件初始化的时候(this.$options.router等于在Vue构造函数传入的router对象)
         this._routerRoot = this // 将routerRoot等于Vue
         this._router = this.$options.router // 给根实例添加_router属性等于router对象
