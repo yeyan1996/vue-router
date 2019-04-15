@@ -25,10 +25,11 @@ export function install (Vue) {
       if (isDef(this.$options.router)) { // 如果是Vue的根实例，即整个Vue组件初始化的时候(this.$options.router等于在Vue构造函数传入的router对象)
         this._routerRoot = this // 将routerRoot等于Vue
         this._router = this.$options.router // 给根实例添加_router属性等于router对象
-        this._router.init(this) // 执行init方法传入根实例（即在index.js中VueRouter这个class的init方法）
+        /**执行init方法初始化路由传入根实例**/
+        this._router.init(this)
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else {
-          // 不是Vue的根实例则组件的_routerRoot等于Vue根实例
+        // 不是Vue的根实例则组件的_routerRoot等于Vue根实例
         this._routerRoot = (this.$parent && this.$parent._routerRoot) || this
       }
       registerInstance(this, this)
@@ -37,7 +38,7 @@ export function install (Vue) {
       registerInstance(this)
     }
   })
-    // 定义$router指向new Vue时候传入的router对象
+    // 定义$router指向实例_routerRoot._router对象(beforeCreate钩子会让这个对象指向new Vue时候传入的router对象)
   Object.defineProperty(Vue.prototype, '$router', {
     get () { return this._routerRoot._router }
   })

@@ -86,6 +86,7 @@ export default class VueRouter {
     return this.history && this.history.current
   }
 
+  //初始化router实例
   init (app: any /* Vue component instance */) {
     process.env.NODE_ENV !== 'production' && assert(
       install.installed,
@@ -103,7 +104,7 @@ export default class VueRouter {
 
     this.app = app
 
-      // 声明history常量等于相应的history路由实例（HashHistory | HTML5History）
+    // 声明history常量等于相应的history路由实例（HashHistory | HTML5History）
     const history = this.history
 
     if (history instanceof HTML5History) {
