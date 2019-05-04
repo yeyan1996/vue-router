@@ -4,7 +4,7 @@ import Regexp from 'path-to-regexp'
 import { cleanPath } from './util/path'
 import { assert, warn } from './util/warn'
 
-// routes为option.routes指传入VueRouter构造函数的参数，也就是路由数组
+//第一次执行时后面3个参数都是undefined
 export function createRouteMap (
   routes: Array<RouteConfig>,
   oldPathList?: Array<string>,
@@ -27,8 +27,7 @@ export function createRouteMap (
 
   routes.forEach(route => {
       // 遍历每项路由数组，执行addRouteRecord函数，将上面3个参数和当前的遍历项作为参数传入
-      // pathList获取了所有路径的字符串组成的数组
-      // 建立pathMap和nameMap映射表
+      // 根据routes生成3个路由信息(pathList, pathMap, nameMap)
     addRouteRecord(pathList, pathMap, nameMap, route)
   })
 
@@ -48,12 +47,14 @@ export function createRouteMap (
     nameMap
   }
 }
- // 第一次调用时没有pathList为空数组,pathMap,nameMap为真空对象
+
+//addRouteRecord会遍历所有routes逐步给pathMap/nameMap添加路由的信息（record）
 function addRouteRecord (
+    //第一次调用前3个参数为空对象
   pathList: Array<string>,
   pathMap: Dictionary<RouteRecord>,
   nameMap: Dictionary<RouteRecord>,
-  route: RouteConfig,
+  route: RouteConfig,  // 第一次调用时只有route有值，为当前遍历到的route对象
   parent?: RouteRecord,
   matchAs?: string
 ) {
@@ -70,7 +71,8 @@ function addRouteRecord (
   }
 
   const pathToRegexpOptions: PathToRegexpOptions = route.pathToRegexpOptions || {}
-  // 规范化路由
+  // 规范化路由（如果当前route有父route，则返回一个父子的完整路径）
+    // e.g "/parent/child"
   const normalizedPath = normalizePath(
     path,
     parent,
@@ -81,7 +83,7 @@ function addRouteRecord (
     pathToRegexpOptions.sensitive = route.caseSensitive
   }
 
-  // 当前规范化的路由项的路由记录
+  // 定义当前route的路由记录
   const record: RouteRecord = {
     path: normalizedPath, // 规范化后的路由
     regex: compileRouteRegex(normalizedPath, pathToRegexpOptions),
@@ -148,17 +150,19 @@ function addRouteRecord (
     })
   }
 
-    // 递归遍历到route.children为false，也就是到达最底部的路由节点（叶子节点），会继续执行以下语句
-    // 如果pathMap中没有这个路由记录（第一次pathMap为真空对象，使用addRoutes动态添加路由时会有已有的路由映射表）
-  // 构造pathMap和nameMap映射表
+    // 递归遍历到最底部的route(叶子节点)
+    // 构造pathMap和nameMap映射表
+
+    // 第一次pathMap为空对象，后续使用addRoutes动态添加路由时会有已有的路由映射表）
   if (!pathMap[record.path]) {
-    // 给数组添加这个路由的路径名
+    // pathList是一个数组，保存着routes列表中所有route的路径
     pathList.push(record.path)
-      // 给对象添加路径名和对应的记录对象组成的数组
+      // pathMap是一个对象，保存着routes列表中所有route的记录（87）
+      // 属性是route的路径，值是route的记录
     pathMap[record.path] = record
   }
 
-  // 给nameMap也添加record对象
+    // 给nameMap同样添加record对象
     // pathMap和nameMap不同的是键名，一个由path路由路径作为键,一个由name路由名称作为键
   if (name) {
     if (!nameMap[name]) {
@@ -186,7 +190,7 @@ function compileRouteRegex (path: string, pathToRegexpOptions: PathToRegexpOptio
 }
 
 // 标准化路由的方法
-// 如果path的第一个字符为/则直接返回，strict为true则将path最后的/(如果有)删除
+// 如果path的第一个字符为/则直接返回
 function normalizePath (path: string, parent?: RouteRecord, strict?: boolean): string {
   if (!strict) path = path.replace(/\/$/, '')
   if (path[0] === '/') return path

@@ -28,7 +28,7 @@ export function createRoute (
     query,
     params: location.params || {},
     fullPath: getFullPath(location, stringifyQuery),
-      // 返回当前的路由记录以及所有的父路由的记录
+    /**返回当前的路由记录以及所有的父路由的记录（父 => 子）**/
     matched: record ? formatMatch(record) : []
   }
   if (redirectedFrom) {

@@ -39,11 +39,10 @@ export default class VueRouter {
     this.beforeHooks = []
     this.resolveHooks = []
     this.afterHooks = []
-      // matcher属性会在transitionTo中使用到
+      /**创建核心的matcher对象*/
     this.matcher = createMatcher(options.routes || [], this)
-
     let mode = options.mode || 'hash'
-      // 当是history模式且不支持supportsPushState且路由配置的fallback显示要求为true时router对象的fallback为不会为false,否则会是true
+      // 选择了history模式但是不支持会回退到hash路由
     this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false
       // 降级为hash模式（显示声明为hash模式 | 不支持history模式 | 要求降级fallback:true）
     if (this.fallback) {
@@ -78,7 +77,6 @@ export default class VueRouter {
     redirectedFrom?: Location
   ): Route {
     // matcher属性返回一个Matcher对象,Matcher有一个match方法
-    // 该方法返回Matcher的match方法的返回结果
     return this.matcher.match(raw, current, redirectedFrom)
   }
 

@@ -14,32 +14,30 @@ export type Matcher = {
 };
 
 // createMatcher返回一个含有match方法和addRoutes方法的对象给router对象的matcher属性
-// 该方法主要用来初始化路由映射表
 export function createMatcher (
-  routes: Array<RouteConfig>,
+  routes: Array<RouteConfig>, //routes为实例化vueRouter的路由列表
   router: VueRouter
 ): Matcher {
-    // 执行createRouteMap传入路由数组，作为唯一的参数
+   //创建路由映射表（ pathList,pathMap,nameMap）
   const { pathList, pathMap, nameMap } = createRouteMap(routes)
-    // 动态添加路由
+    // createMatcher会返回一个动态添加路由API
+    // 原理是给已有的包含路由信息的路由映射表（pathList,pathMap,nameMap）再添加新增的routes
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap)
   }
 
-  // 调用VueRouter或者实例的match方法实质上是调用这个方法
-    // 匹配路径来映射路由
-    // 根据record的记录返回route对象（createRoute方法）
+    // 调用router.match/router.matcher.match实质上是调用这个方法
+    /**通过当前的路径结合之前生成的所有路由的record记录生成一个route对象并返回（createRoute方法）**/
   function match (
-    raw: RawLocation,
+    raw: RawLocation, //值为location.pathname
     currentRoute?: Route,
     redirectedFrom?: Location
   ): Route {
-    // 返回location对象，拆分传入的raw字符串提取参数
+    // 返回location对象，拆分传入的raw字符串提取参数（详情：test/unit/specs/location.spec.js:4）
     const location = normalizeLocation(raw, currentRoute, false, router)
     const { name } = location
 
-    if (name) {
-        // 有传入的跳转路由信息中name属性就使用nameMap映射表找对应name的记录
+    if (name) { // 跳转路由信息中有name属性则去nameMap映射表找对应name的记录
       const record = nameMap[name]
       if (process.env.NODE_ENV !== 'production') {
         warn(record, `Route with name '${name}' does not exist`)
@@ -63,23 +61,23 @@ export function createMatcher (
 
       if (record) {
         location.path = fillParams(record.path, location.params, `named route "${name}"`)
+          /**创建route路由对象**/
         return _createRoute(record, location, redirectedFrom)
       }
-    } else if (location.path) {
+    } else if (location.path) { //否则就去pathList和pathMap根据path找对应的路由信息
       location.params = {}
-      // 遍历pathList(由路径名称组成的字符串数组)
       for (let i = 0; i < pathList.length; i++) {
         const path = pathList[i]
-          // 找到每个路径对应的在pathMap中对应的record
         const record = pathMap[path]
-          // 进行匹配
+          // 使用当前location.path和每个路由记录的正则属性进行匹配
         if (matchRoute(record.regex, location.path, location.params)) {
+            /**创建route路由对象**/
           return _createRoute(record, location, redirectedFrom)
         }
       }
     }
     // no match
-      // 如果到了这步说明上面的都没有提前返回，即没有匹配到，随后会进入下面的方法
+      // 创建一个匹配失败的route对象（会在视图中创建一个注释节点）
     return _createRoute(null, location)
   }
 
@@ -164,7 +162,7 @@ export function createMatcher (
     return _createRoute(null, location)
   }
 
-  // 创建路由,一般情况下会执行createRoute方法
+  // 创建路由对象,一般情况下会执行createRoute方法
   function _createRoute (
     record: ?RouteRecord,
     location: Location,
@@ -185,7 +183,7 @@ export function createMatcher (
   }
 }
 
-// 遍历每个记录的regex属性，找到和path即传入的路径匹配的正则返回true
+// 遍历每个记录的regex正则，匹配传入的当前的location.path，成功则返回true
 function matchRoute (
   regex: RouteRegExp,
   path: string,

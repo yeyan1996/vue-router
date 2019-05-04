@@ -3,6 +3,7 @@
 import { _Vue } from '../install'
 import { warn, isError } from './warn'
 
+//解析异步路由（传入当前新增的路由记录）
 export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
   return (to, from, next) => {
     let hasAsync = false
@@ -15,6 +16,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
       // we are not using Vue's default async resolving mechanism because
       // we want to halt the navigation until the incoming component has been
       // resolved.
+        //异步组件
       if (typeof def === 'function' && def.cid === undefined) {
         hasAsync = true
         pending++
@@ -27,7 +29,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
           def.resolved = typeof resolvedDef === 'function'
             ? resolvedDef
             : _Vue.extend(resolvedDef)
-            // 将解析后的组件对象赋值给路由中components
+            // 将解析后的组件配置项赋值给路由中components属性
           match.components[key] = resolvedDef
           pending--
           if (pending <= 0) {
@@ -78,11 +80,12 @@ export function flatMapComponents (
   // 数组扁平化
   return flatten(matched.map(m => {
     // 遍历components属性（一般为component，vue-router会把component变成components，因为有命名视图的可能）
-      // 如果是components衍变的key为default，否则为自己定义的key值
+      // 如果是component衍变的key为default，否则为自己定义的key值
     return Object.keys(m.components).map(key => fn(
-      m.components[key],
-      m.instances[key],
-      m, key
+        m.components[key], // 组件(key一般为default)
+        m.instances[key], // 实例
+        m, //路由记录
+        key //视图名（一般为default）即使用默认组件
     ))
   }))
 }

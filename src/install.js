@@ -20,8 +20,10 @@ export function install (Vue) {
   }
 
   Vue.mixin({
+      // 全局混入，在beforeCreate中会初始化当前路由的信息
     beforeCreate () {
-      if (isDef(this.$options.router)) { // 只有Vue的根实例在$options中含有router对象
+        //当是根实例时会进行路由初始化操作
+      if (isDef(this.$options.router)) {
         this._routerRoot = this // 将routerRoot等于根实例
         this._router = this.$options.router // 给根实例添加_router属性等于router对象
         /**执行init方法初始化路由传入根实例**/
