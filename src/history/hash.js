@@ -105,6 +105,7 @@ export function getHash (): string {
   return index === -1 ? '' : decodeURI(href.slice(index + 1))
 }
 
+//将当前地址的#后面的值替换为path
 function getUrl (path) {
   const href = window.location.href
   const i = href.indexOf('#')

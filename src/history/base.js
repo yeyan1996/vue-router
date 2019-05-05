@@ -68,8 +68,8 @@ export class History {
       // current是切换前的route对象
     const route = this.router.match(location, this.current)
     this.confirmTransition(route, () => {
-      this.updateRoute(route)
-      onComplete && onComplete(route)
+      this.updateRoute(route) //确认导航成功
+      onComplete && onComplete(route) //执行transitionTo成功的回调
       this.ensureURL()
 
       // fire ready cbs once
