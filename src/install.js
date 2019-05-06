@@ -14,6 +14,8 @@ export function install (Vue) {
 
   //注册组件实例（src/components/view.js:58）
   const registerInstance = (vm, callVal) => {
+    //i为router-view组件占位符vnode
+      // 这里会执行registerRouteInstance，将当前组件实例赋值给匹配到的路由记录（用于beforeRouteEnter的回调获取vm实例）
     let i = vm.$options._parentVnode
     if (isDef(i) && isDef(i = i.data) && isDef(i = i.registerRouteInstance)) {
       i(vm, callVal)
@@ -22,6 +24,10 @@ export function install (Vue) {
 
   Vue.mixin({
       // 全局混入，在beforeCreate中会初始化当前路由的信息
+
+    /** vue-router流程
+     * 触发路由跳转 => transitionTo => 执行所有导航钩子 => 确认导航成功
+     * => 接受到异步组件并解析 =>  触发beforeRouterEnter的回调 => 更新视图 **/
     beforeCreate () {
         //当是根实例时会进行路由初始化操作
       if (isDef(this.$options.router)) {
@@ -29,6 +35,8 @@ export function install (Vue) {
         this._router = this.$options.router // 给根实例添加_router属性等于router对象
         /**执行init方法初始化路由传入根实例**/
         this._router.init(this)
+          /**将根实例的_router属性，即组件实例的$route属性定义为响应式，每次路由确认导航时会触发setter，将根实例重新渲染**/
+          //每次src/index.js:122
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else {
         // 非根实例则等于它父组件的_routerRoot(因为是树形结构所以所有的组件的_routerRoot都等于根实例)

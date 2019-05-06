@@ -215,6 +215,7 @@ export class History {
   updateRoute (route: Route) {
     const prev = this.current
     this.current = route
+      // 执行回调给route赋值，随即触发视图更新
     this.cb && this.cb(route)
     this.router.afterHooks.forEach(hook => {
       hook && hook(route, prev)

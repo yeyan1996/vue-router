@@ -118,6 +118,8 @@ export default class VueRouter {
       )
     }
 
+    //当history发生改变后会执行回调
+      // 即修改_route属性，因为_route属性是一个视图依赖的响应式变量，所以会触发视图的重新渲染
     history.listen(route => {
       this.apps.forEach((app) => {
         app._route = route
