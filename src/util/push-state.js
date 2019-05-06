@@ -43,6 +43,7 @@ export function pushState (url?: string, replace?: boolean) {
   // DOM Exception 18 where it limits to 100 pushState calls
   const history = window.history
   try {
+    //即使使用hash路由，如果支持 pushState 最终也会使用 pushState 修改路由
     if (replace) {
       history.replaceState({ key: _key }, '', url)
     } else {

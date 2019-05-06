@@ -3,7 +3,7 @@ import { extend } from '../util/misc'
 
 export default {
   name: 'RouterView',
-  functional: true,
+  functional: true, //函数式组件，它的render函数支持第二个参数
   props: {
     name: {
       type: String,
@@ -26,6 +26,8 @@ export default {
     let depth = 0
     let inactive = false
     while (parent && parent._routerRoot !== parent) {
+      //depth 表示router-view的深度，当当前router-view的parent又是一个router-view时，当前的router-view深度就会+1
+      // 默认是0，当发生了router-view的嵌套关系时，里层的router-view的depth为1
       if (parent.$vnode && parent.$vnode.data.routerView) {
         depth++
       }
@@ -41,6 +43,7 @@ export default {
       return h(cache[name], data, children)
     }
 
+    //matched是一个数组，顺序由父 => 子（src/util/route.js:32），根据深度来返回对应的路由记录
     const matched = route.matched[depth]
     // render empty node if no matched route
     if (!matched) {
@@ -59,6 +62,7 @@ export default {
         (val && current !== vm) ||
         (!val && current === vm)
       ) {
+        // 将组件的instances属性等于 val 参数(src/install.js:37)
         matched.instances[name] = val
       }
     }

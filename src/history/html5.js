@@ -18,6 +18,7 @@ export class HTML5History extends History {
       setupScroll()
     }
 
+    //HTML5 的 history 路由是在初始化时监听 popstate 事件，传入回调 transitionTo 的
     const initLocation = getLocation(this.base)
     window.addEventListener('popstate', e => {
       const current = this.current

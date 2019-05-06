@@ -113,8 +113,8 @@ export default class VueRouter {
       }
       history.transitionTo(
         history.getCurrentLocation(),
-        setupHashListener,
-        setupHashListener
+        setupHashListener, //成功回调
+        setupHashListener //取消回调
       )
     }
 

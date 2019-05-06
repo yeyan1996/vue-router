@@ -61,15 +61,21 @@ export class History {
     this.errorCbs.push(errorCb)
   }
 
-  transitionTo (/*跳转的路由信息*/location: RawLocation, onComplete?: Function, onAbort?: Function) {
+  /**vue-router路由跳转的核心逻辑
+   * 执行所有的路由钩子
+   * 解析异步路由组件
+   * **/
+  transitionTo (/*跳转的路由信息*/location: RawLocation,/*成功回调*/ onComplete?: Function, onAbort?: Function) {
       // this是history路由实例（HashHistory | HTML5History）
       // this.router是vueRouter实例
       // match方法会根据当前的location结合之前生成的路由映射表（nameMap,pathMap）生成route对象（src/create-matcher.js:32）
       // current是切换前的route对象
     const route = this.router.match(location, this.current)
     this.confirmTransition(route, () => {
-      this.updateRoute(route) //确认导航成功
-      onComplete && onComplete(route) //执行transitionTo成功的回调
+      this.updateRoute(route) //确认导航成功，执行afterEach钩子
+
+      //执行transitionTo成功的回调(src/index.js:116)
+      onComplete && onComplete(route)
       this.ensureURL()
 
       // fire ready cbs once
@@ -87,6 +93,7 @@ export class History {
       }
     })
   }
+  // transitionTo的核心
   // 路由跳转中执行的函数，传入route对象，成功回调和失败回调
   confirmTransition (route: Route, onComplete: Function, onAbort?: Function) {
     const current = this.current //切换前的route对象
@@ -192,7 +199,7 @@ export class History {
           return abort()
         }
         this.pending = null
-          // onComplete中会确认导航，并执行afterEach钩子（70）
+          // 确认导航，执行onComplete回调，其中会执行afterEach钩子（70）
         onComplete(route)
         if (this.router.app) {
           /**在nextTick后执行 postEnterCbs 数组即 beforeRouteEnter 的next方法的参数（函数）**/

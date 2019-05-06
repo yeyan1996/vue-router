@@ -83,7 +83,7 @@ export function flatMapComponents (
       // 如果是component衍变的key为default，否则为自己定义的key值
     return Object.keys(m.components).map(key => fn(
         m.components[key], // 组件(key一般为default)
-        m.instances[key], // 实例
+        m.instances[key], // 实例(实例默认为空对象，在registerInstance时，会在router-view中创建组件实例) （src/components/view.js:58）
         m, //路由记录
         key //视图名（一般为default）即使用默认组件
     ))

@@ -14,6 +14,7 @@ export class HashHistory extends History {
     if (fallback && checkFallback(this.base)) {
       return
     }
+    //确保location中含有/#/
     ensureSlash()
   }
 
@@ -28,11 +29,13 @@ export class HashHistory extends History {
       setupScroll()
     }
 
+    /**哈希路由在初始化的时候，执行完transitionTo，会给浏览器监听前进和后退的事件**/
     window.addEventListener(supportsPushState ? 'popstate' : 'hashchange', () => {
       const current = this.current
       if (!ensureSlash()) {
         return
       }
+      //当点击浏览器前进/后退后，会重新执行 transitionTo 方法
       this.transitionTo(getHash(), route => {
         if (supportsScroll) {
           handleScroll(this.router, route, current, true)
@@ -93,10 +96,12 @@ function ensureSlash (): boolean {
   if (path.charAt(0) === '/') {
     return true
   }
+  //通过replace 替换，防止多余的 history 栈
   replaceHash('/' + path)
   return false
 }
 
+//获取#后的值作为hash
 export function getHash (): string {
   // We can't use window.location.hash here because it's not
   // consistent across browsers - Firefox will pre-decode it!
@@ -114,6 +119,7 @@ function getUrl (path) {
 }
 
 function pushHash (path) {
+  //不支持 pushState 方法会使用location.hash方式修改hash
   if (supportsPushState) {
     pushState(getUrl(path))
   } else {
