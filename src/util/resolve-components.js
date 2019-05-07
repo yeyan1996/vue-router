@@ -21,6 +21,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
         hasAsync = true
         pending++
 
+        /**以下代码会等到异步组件获取到后，在微任务队列中执行**/
         const resolve = once(resolvedDef => {
           if (isESModule(resolvedDef)) {
             resolvedDef = resolvedDef.default
@@ -33,6 +34,8 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
           match.components[key] = resolvedDef
           pending--
           if (pending <= 0) {
+            // 当匹配到的route中的 matched属性里记录的路由组件都被解析成功后，执行iterator next ，在 runQueue 中解析 queue 的下个元素
+            // iterator next（src/history/base.js:154）
             next()
           }
         })
@@ -44,6 +47,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
             error = isError(reason)
               ? reason
               : new Error(msg)
+            // 发生错误时，执行iterator next，最终会中断导航
             next(error)
           }
         })
@@ -82,7 +86,7 @@ export function flatMapComponents (
     // 遍历components属性（一般为component，vue-router会把component变成components，因为有命名视图的可能）
       // 如果是component衍变的key为default，否则为自己定义的key值
     return Object.keys(m.components).map(key => fn(
-        m.components[key], // 组件(key一般为default)
+        m.components[key], // 组件(key一般为default)，当是路由懒加载时这个值为函数
         m.instances[key], // 实例(实例默认为空对象，在registerInstance时，会在router-view中创建组件实例) （src/components/view.js:58）
         m, //路由记录
         key //视图名（一般为default）即使用默认组件

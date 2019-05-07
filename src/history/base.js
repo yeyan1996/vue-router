@@ -139,7 +139,7 @@ export class History {
       // in-config enter guards
       activated.map(m => m.beforeEnter), //返回当前组件的 beforeEnter 钩子函数（数组）,
       // async components
-      resolveAsyncComponents(activated)  // 解析异步组件，并且返回
+      resolveAsyncComponents(activated)  // 解析异步组件(也是一个导航守卫函数，但是好像没什么用？)
     )
 
     this.pending = route
@@ -151,7 +151,7 @@ export class History {
       }
       try {
         //执行某个生命周期中的导航守卫
-        hook(route, current, (to: any) => {
+        hook(route, current, /*iterator next*/(to: any) => {
           if (to === false || isError(to)) {
             // next(false) -> abort navigation, ensure current URL
               // 如果传入的是next(false)会中断导航，并且会重置到form的路由
@@ -173,7 +173,8 @@ export class History {
             }
           } else {
             // confirm transition and pass on the value
-              // 如果next没有参数则直接执行next，解析queue的下个元素
+            // 如果next没有参数则直接执行runQueue next
+            // 即解析queue的下个元素
             next(to)
           }
         })

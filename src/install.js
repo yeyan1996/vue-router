@@ -26,8 +26,8 @@ export function install (Vue) {
       // 全局混入，在beforeCreate中会初始化当前路由的信息
 
     /** vue-router流程
-     * 触发路由跳转 => transitionTo => 执行所有导航钩子 => 确认导航成功
-     * => 接受到异步组件并解析 =>  触发beforeRouterEnter的回调 => 更新视图 **/
+     * 触发路由跳转 => transitionTo => 执行所有导航钩子 => 确认导航成功 =>
+     * 接受到异步组件并解析 =>  触发beforeRouterEnter的回调 => 更新视图 **/
     beforeCreate () {
         //当是根实例时会进行路由初始化操作
       if (isDef(this.$options.router)) {
