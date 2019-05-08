@@ -26,8 +26,8 @@ export function install (Vue) {
       // 全局混入，在beforeCreate中会初始化当前路由的信息
 
     /** vue-router流程
-     * 触发路由跳转 => transitionTo => 执行所有导航钩子 => 确认导航成功 =>
-     * 接受到异步组件并解析 =>  触发beforeRouterEnter的回调 => 更新视图 **/
+     * 触发路由跳转 => transitionTo => 执行准备离开的路由的钩子 => 接受到异步组件并解析 => 执行准备进入的路由的钩子
+     * 确认导航成功 =>  触发beforeRouterEnter的回调 => 更新视图 **/
     beforeCreate () {
         //当是根实例时会进行路由初始化操作
       if (isDef(this.$options.router)) {
@@ -36,7 +36,7 @@ export function install (Vue) {
         /**执行init方法初始化路由传入根实例**/
         this._router.init(this)
           /**将根实例的_router属性，即组件实例的$route属性定义为响应式，每次路由确认导航时会触发setter，将根实例重新渲染**/
-          //每次src/index.js:122
+          //每次路由切换都会执行回调修改_router(src/index.js:125)
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else {
         // 非根实例则等于它父组件的_routerRoot(因为是树形结构所以所有的组件的_routerRoot都等于根实例)

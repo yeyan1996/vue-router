@@ -31,8 +31,11 @@ export default {
   render (h: Function) {
     const router = this.$router
     const current = this.$route
+    //调用router.resolve解析出一个对象，描述了路由的一些信息
+    // 包含了location(类似原生location对象),route(路由对象),href(路径)
     const { location, route, href } = router.resolve(this.to, current, this.append)
 
+    //给data属性的动态生成的class
     const classes = {}
     const globalActiveClass = router.options.linkActiveClass
     const globalExactActiveClass = router.options.linkExactActiveClass
@@ -49,15 +52,18 @@ export default {
     const exactActiveClass = this.exactActiveClass == null
       ? exactActiveClassFallback
       : this.exactActiveClass
+    // 生成跳转后路由的route对象
     const compareTarget = location.path
       ? createRoute(null, location, null, router)
       : route
 
+    //当current(当前)的route对象和to解析后转换成的route对象是相同的，说明是完全匹配
     classes[exactActiveClass] = isSameRoute(current, compareTarget)
     classes[activeClass] = this.exact
       ? classes[exactActiveClass]
       : isIncludedRoute(current, compareTarget)
 
+    //最终跳转的函数
     const handler = e => {
       if (guardEvent(e)) {
         if (this.replace) {
@@ -69,12 +75,14 @@ export default {
     }
 
     const on = { click: guardEvent }
+    //将event的值等于跳转的函数，最终挂载到vnode的data中作为监听的事件
     if (Array.isArray(this.event)) {
       this.event.forEach(e => { on[e] = handler })
     } else {
       on[this.event] = handler
     }
 
+    //添加router-link的class
     const data: any = {
       class: classes
     }
@@ -84,6 +92,7 @@ export default {
       data.attrs = { href }
     } else {
       // find the first <a> child and apply listener and href
+      // 从插槽中找到第一个a标签，防止在router-link的插槽中包含一个跳转到其他路由的a标签
       const a = findAnchor(this.$slots.default)
       if (a) {
         // in case the <a> is a static node
@@ -98,6 +107,7 @@ export default {
       }
     }
 
+    //通过tag标签名，渲染出不同的标签
     return h(this.tag, data, this.$slots.default)
   }
 }

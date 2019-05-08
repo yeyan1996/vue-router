@@ -10,13 +10,12 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
     let pending = 0
     let error = null
 
-    flatMapComponents(matched, (def, _, match, key) => {
+    flatMapComponents(matched, /*解析matched中的异步组件*/(def, _, match, key) => {
       // if it's a function and doesn't have cid attached,
       // assume it's an async component resolve function.
       // we are not using Vue's default async resolving mechanism because
       // we want to halt the navigation until the incoming component has been
       // resolved.
-        //异步组件
       if (typeof def === 'function' && def.cid === undefined) {
         hasAsync = true
         pending++
@@ -30,7 +29,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
           def.resolved = typeof resolvedDef === 'function'
             ? resolvedDef
             : _Vue.extend(resolvedDef)
-            // 将解析后的组件配置项赋值给路由中components属性
+            // 将解析后的组件配置项赋值给路由中components属性（将组件配置项覆盖原来的()=>import(.....)）
           match.components[key] = resolvedDef
           pending--
           if (pending <= 0) {
@@ -86,7 +85,7 @@ export function flatMapComponents (
     // 遍历components属性（一般为component，vue-router会把component变成components，因为有命名视图的可能）
       // 如果是component衍变的key为default，否则为自己定义的key值
     return Object.keys(m.components).map(key => fn(
-        m.components[key], // 组件(key一般为default)，当是路由懒加载时这个值为函数
+        m.components[key], // 组件(key一般为default)，当是路由懒加载时这个值为函数（()=> import(.....)）
         m.instances[key], // 实例(实例默认为空对象，在registerInstance时，会在router-view中创建组件实例) （src/components/view.js:58）
         m, //路由记录
         key //视图名（一般为default）即使用默认组件

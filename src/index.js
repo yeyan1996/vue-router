@@ -76,7 +76,7 @@ export default class VueRouter {
     current?: Route,
     redirectedFrom?: Location
   ): Route {
-    // matcher属性返回一个Matcher对象,Matcher有一个match方法
+    // router.matcher属性是一个函数，返回一个Matcher对象,Matcher有一个match方法
     return this.matcher.match(raw, current, redirectedFrom)
   }
 
@@ -118,8 +118,8 @@ export default class VueRouter {
       )
     }
 
-    //当history发生改变后会执行回调
-      // 即修改_route属性，因为_route属性是一个视图依赖的响应式变量，所以会触发视图的重新渲染
+    // 注册回调，当history发生改变后会执行回调（src/history/base.js:222）
+    // 即修改_route属性，因为_route属性是一个视图依赖的响应式变量，所以会触发视图的重新渲染
     history.listen(route => {
       this.apps.forEach((app) => {
         app._route = route
@@ -183,6 +183,7 @@ export default class VueRouter {
     }))
   }
 
+ //手动解析生成一个路由的对象
   resolve (
     to: RawLocation,
     current?: Route,

@@ -129,6 +129,7 @@ export class History {
       // queue是NavigationGuard组成的数组， NavigationGuard是路由守卫的函数，传入to,from,next3个参数
       // 对应文档中的顺序
       // https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%AE%88%E5%8D%AB
+
     const queue: Array<?NavigationGuard> = [].concat(
         // in-component leave guards
       extractLeaveGuards(deactivated), //返回当前组件的 beforeRouteLeave 钩子函数（数组，子=>父）
@@ -185,8 +186,8 @@ export class History {
 
       // 等到队列中所有的组件（懒加载的组件）都解析完毕后，就会执行第三个参数回调
       // 即为什么beforeRouteEnter钩子需要在next回调中执行的原因
-    runQueue(queue, iterator, /*队列遍历结束后，执行异步组件的回调*/() => {
-      const postEnterCbs = []
+    runQueue(queue, iterator, /*队列遍历结束后，执行异步组件的回调（此时懒加载组件以及被解析完毕）*/() => {
+      const postEnterCbs = [] // 保存beforeRouterEnter的next回调
       const isValid = () => this.current === route
       // wait until async components are resolved before
       // extracting in-component enter guards
@@ -204,6 +205,7 @@ export class History {
         onComplete(route)
         if (this.router.app) {
           /**在nextTick后执行 postEnterCbs 数组即 beforeRouteEnter 的next方法的参数（函数）**/
+          // 因此 beforeRouteEnter 需要通过回调传入this的值
           this.router.app.$nextTick(() => {
             postEnterCbs.forEach(cb => { cb() })
           })
@@ -216,7 +218,7 @@ export class History {
   updateRoute (route: Route) {
     const prev = this.current
     this.current = route
-      // 执行回调给route赋值，随即触发视图更新
+    // 执行回调给route赋值，随即触发视图更新
     this.cb && this.cb(route)
     this.router.afterHooks.forEach(hook => {
       hook && hook(route, prev)
