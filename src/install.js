@@ -12,7 +12,7 @@ export function install (Vue) {
 
   const isDef = v => v !== undefined
 
-  //注册组件实例（src/components/view.js:58）
+  //注册组件实例（src/components/view.js:60）
   const registerInstance = (vm, callVal) => {
     //i为router-view组件占位符vnode
       // 这里会执行registerRouteInstance，将当前组件实例赋值给匹配到的路由记录（用于beforeRouteEnter的回调获取vm实例）
@@ -26,8 +26,8 @@ export function install (Vue) {
       // 全局混入，在beforeCreate中会初始化当前路由的信息
 
     /** vue-router流程
-     * 触发路由跳转 => transitionTo => 执行准备离开的路由的钩子 => 接受到异步组件并解析 => 执行准备进入的路由的钩子
-     * 确认导航成功 =>  触发beforeRouterEnter的回调 => 更新视图 **/
+     * 触发路由跳转 => transitionTo => 执行准备离开相关的路由钩子 => 接受到异步组件并解析 => 执行准备进入的路由的钩子
+     * 确认导航成功  => 更新视图  => 触发beforeRouterEnter的回调 **/
     beforeCreate () {
         //当是根实例时会进行路由初始化操作
       if (isDef(this.$options.router)) {

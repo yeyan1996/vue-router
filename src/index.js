@@ -102,7 +102,6 @@ export default class VueRouter {
 
     this.app = app
 
-    // 声明history常量等于相应的history路由实例（HashHistory | HTML5History）
     const history = this.history
 
     if (history instanceof HTML5History) {
@@ -113,7 +112,7 @@ export default class VueRouter {
       }
       history.transitionTo(
         history.getCurrentLocation(),
-        setupHashListener, //成功回调
+        setupHashListener, //成功回调(给哈希路由的模式监听浏览器的popState和hashchange)
         setupHashListener //取消回调
       )
     }

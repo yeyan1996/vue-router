@@ -118,7 +118,7 @@ export class History {
       return abort()
     }
 
-   /**计算出当前路由和跳转路由在路径上的相同点不同点，来执行不同的导航守卫*/
+   /**计算出当前路由和跳转路由在路径上的相同点不同点（路由记录），来执行不同的导航守卫*/
     const {
       updated,
       deactivated,
@@ -218,7 +218,7 @@ export class History {
   updateRoute (route: Route) {
     const prev = this.current
     this.current = route
-    // 执行回调给route赋值，随即触发视图更新
+    /** 执行回调给route赋值，随即触发视图更新（src/index.js:124）*/
     this.cb && this.cb(route)
     this.router.afterHooks.forEach(hook => {
       hook && hook(route, prev)
@@ -348,6 +348,9 @@ function bindEnterGuard (
     // 将用户定义在beforeRouteEnter中的next函数，作为第三个参数传入guard中
     return guard(to, from, /*cb是一个函数，作为回调函数的参数*/cb => {
       next(cb)
+      /**当cb是一个函数，即next中传入了一个回调函数时，会将它放到回调数组中，在nextTick后执行它
+       * 因为这个时候组件虽然被解析成功了，但是触发视图更新的逻辑还未执行（没有给route赋值），所以回调需要在nextTick后才能拿到vm实例
+       * **/
       if (typeof cb === 'function') {
         cbs.push(() => {
           // #750
@@ -372,7 +375,8 @@ function poll (
     instances[key] &&
     !instances[key]._isBeingDestroyed // do not reuse being destroyed instance
   ) {
-    //这里会调用cb并且传入vm实例，所以在next的参数cb中中可以拿到参数vm
+    // 只有当组件被生成后，执行registerRouteInstance给matched对象赋值了当前组件的实例，instances[key]才会获得组件实例
+    // 调用cb并且传入vm实例，所以在next的参数cb中中可以拿到参数vm
     cb(instances[key])
   } else if (isValid()) {
     setTimeout(() => {
