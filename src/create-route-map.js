@@ -56,7 +56,7 @@ function addRouteRecord (
   nameMap: Dictionary<RouteRecord>,
   route: RouteConfig,  // 第一次调用时只有route有值，为当前遍历到的route对象
   parent?: RouteRecord,
-  matchAs?: string
+  matchAs?: string //路由别名
 ) {
   // 获取路由的path属性和name属性
   const { path, name } = route
@@ -156,7 +156,7 @@ function addRouteRecord (
     // 第一次pathMap为空对象，后续使用addRoutes动态添加路由时会有已有的路由映射表）
   if (!pathMap[record.path]) {
     // pathList是一个数组，保存着routes列表中所有route的路径
-    pathList.push(record.path)
+      pathList.push(record.path)
       // pathMap是一个对象，保存着routes列表中所有route的记录（87）
       // 属性是route的路径，值是route的记录
     pathMap[record.path] = record

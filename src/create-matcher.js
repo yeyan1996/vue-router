@@ -33,11 +33,11 @@ export function createMatcher (
     currentRoute?: Route,
     redirectedFrom?: Location
   ): Route {
-    // 返回location对象，拆分传入的raw字符串提取参数（详情：test/unit/specs/location.spec.js:4）
+    // 根据pathname或者路由对象生成一个location对象（详情：test/unit/specs/location.spec.js:4）
     const location = normalizeLocation(raw, currentRoute, false, router)
     const { name } = location
 
-    if (name) { // 跳转路由信息中有name属性则去nameMap映射表找对应name的记录
+    if (name) {  // 跳转路由信息中有name属性则去nameMap映射表找对应name的记录
       const record = nameMap[name]
       if (process.env.NODE_ENV !== 'production') {
         warn(record, `Route with name '${name}' does not exist`)
