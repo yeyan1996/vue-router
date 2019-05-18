@@ -72,7 +72,7 @@ export class History {
       // current是切换前的route对象
     const route = this.router.match(location, this.current)
     this.confirmTransition(route, () => {
-      this.updateRoute(route) //确认导航成功，执行afterEach钩子
+      this.updateRoute(route) //确认导航成功，更新视图以及执行afterEach钩子
 
       //执行transitionTo成功的回调(src/index.js:116)
       onComplete && onComplete(route)
@@ -201,10 +201,11 @@ export class History {
           return abort()
         }
         this.pending = null
-          // 确认导航，执行onComplete回调，其中会执行afterEach钩子（70）
+          // 确认导航，执行onComplete回调，其中会在 $nextTick 后更新视图，以及执行afterEach钩子（74）
         onComplete(route)
         if (this.router.app) {
           /**在nextTick后执行 postEnterCbs 数组即 beforeRouteEnter 的next方法的参数（函数）**/
+          /**因为此时 nextTick 队列中存在一个 render watcher 所以先执行 render watcher 更新视图，再执行 beforeRouteEnter 的回调**/
           // 因此 beforeRouteEnter 需要通过回调传入this的值
           this.router.app.$nextTick(() => {
             postEnterCbs.forEach(cb => { cb() })
@@ -358,6 +359,7 @@ function bindEnterGuard (
           // the instance may not have been registered at this time.
           // we will need to poll for registration until current route
           // is no longer valid.
+          // 如果存在特殊情况（transition） 会延迟到下个宏任务执行，一般不会
           poll(cb, match.instances, key, isValid)
         })
       }

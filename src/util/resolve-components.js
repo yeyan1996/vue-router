@@ -28,7 +28,7 @@ export function resolveAsyncComponents (matched: Array<RouteRecord>): Function {
           // save resolved on async factory in case it's used elsewhere
           def.resolved = typeof resolvedDef === 'function'
             ? resolvedDef
-            : _Vue.extend(resolvedDef)
+            : _Vue.extend(resolvedDef) // 这个组件构造器不知道哪里使用的。。。。
             // 将解析后的组件配置项赋值给路由中components属性（将组件配置项覆盖原来的()=>import(.....)）
           match.components[key] = resolvedDef
           pending--
