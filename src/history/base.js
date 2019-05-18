@@ -158,7 +158,7 @@ export class History {
               // 如果传入的是next(false)会中断导航，并且会重置到form的路由
             this.ensureURL(true)
             abort(to)
-          } else if (
+          } else if ( //跳转到指定路由
             typeof to === 'string' ||
             (typeof to === 'object' && (
               typeof to.path === 'string' ||
@@ -166,7 +166,7 @@ export class History {
             ))
           ) {
             // next('/') or next({ path: '/' }) -> redirect
-            abort()
+            abort() //取消导航并且执行push/replace跳转到指定路由
             if (typeof to === 'object' && to.replace) {
               this.replace(to)
             } else {

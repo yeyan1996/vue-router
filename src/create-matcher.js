@@ -33,7 +33,7 @@ export function createMatcher (
     currentRoute?: Route,
     redirectedFrom?: Location
   ): Route {
-    // 根据pathname或者路由对象生成一个location对象（详情：test/unit/specs/location.spec.js:4）
+    // 根据pathname或者路由对象使用一个location对象（详情：test/unit/specs/location.spec.js:4）
     const location = normalizeLocation(raw, currentRoute, false, router)
     const { name } = location
 

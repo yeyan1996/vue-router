@@ -76,7 +76,7 @@ export default class VueRouter {
     current?: Route,
     redirectedFrom?: Location
   ): Route {
-    // router.matcher属性是一个函数，返回一个Matcher对象,Matcher有一个match方法
+    // 最终执行实例的 matcher 属性的 match 方法（src/create-matcher.js:31）
     return this.matcher.match(raw, current, redirectedFrom)
   }
 
