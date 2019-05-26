@@ -23,6 +23,7 @@ export function normalizeLocation (
     return next
   }
 
+  // 即没有 name 也没有 path 的跳转？？
   // relative params
   if (!next.path && next.params && current) {
     next = extend({}, next)

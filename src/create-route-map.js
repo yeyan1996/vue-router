@@ -27,7 +27,7 @@ export function createRouteMap (
 
   routes.forEach(route => {
       // 遍历每项路由数组，执行addRouteRecord函数，将上面3个参数和当前的遍历项作为参数传入
-      // 根据routes生成3个路由信息(pathList, pathMap, nameMap)
+      // 根据配置项routes生成3个路由信息(pathList, pathMap, nameMap)
     addRouteRecord(pathList, pathMap, nameMap, route)
   })
 

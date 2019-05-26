@@ -29,11 +29,11 @@ export function createMatcher (
     // 调用router.match/router.matcher.match实质上是调用这个方法
     /**通过当前的路径结合之前生成的所有路由的record记录生成一个route对象并返回（createRoute方法）**/
   function match (
-    raw: RawLocation, //值为location.pathname
+    raw: RawLocation, //值为location.pathname（第一次跳转）或者 location 对象
     currentRoute?: Route,
     redirectedFrom?: Location
   ): Route {
-    // 根据pathname或者路由对象使用一个location对象（详情：test/unit/specs/location.spec.js:4）
+    // 如果raw是 location.pathname 将它规范化为一个location对象（详情：test/unit/specs/location.spec.js:4）
     const location = normalizeLocation(raw, currentRoute, false, router)
     const { name } = location
 

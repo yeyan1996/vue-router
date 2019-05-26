@@ -68,7 +68,7 @@ export class History {
   transitionTo (/*跳转的路由信息*/location: RawLocation,/*成功回调*/ onComplete?: Function, onAbort?: Function) {
       // this是history路由实例（HashHistory | HTML5History）
       // this.router是vueRouter实例
-      // match方法会根据当前的location结合之前生成的路由映射表（nameMap,pathMap）生成route对象（src/create-matcher.js:32）
+      // match方法会根据当前的location结合之前生成的路由映射表（nameMap,pathMap）生成route对象（src/create-matcher.js:31）
       // current是切换前的route对象
     const route = this.router.match(location, this.current)
     this.confirmTransition(route, () => {
@@ -132,15 +132,15 @@ export class History {
 
     const queue: Array<?NavigationGuard> = [].concat(
         // in-component leave guards
-      extractLeaveGuards(deactivated), //返回当前组件的 beforeRouteLeave 钩子函数（数组，子=>父）
+      extractLeaveGuards(deactivated), //返回离开组件的 beforeRouteLeave 钩子函数（数组，子 => 父）
       // global before hooks
-      this.router.beforeHooks, //返回当前组件的 beforeEach 钩子函数（数组） （src/index.js:128）
+      this.router.beforeHooks, //返回路由实例（全局）的 beforeEach 钩子函数（数组） （src/index.js:128）
       // in-component update hooks
       extractUpdateHooks(updated), //返回当前组件的 beforeRouteUpdate 钩子函数（数组，父 => 子）,
       // in-config enter guards
       activated.map(m => m.beforeEnter), //返回当前组件的 beforeEnter 钩子函数（数组）,
       // async components
-      resolveAsyncComponents(activated)  // 解析异步组件(也是一个导航守卫函数，但是好像没什么用？)
+      resolveAsyncComponents(activated)  // 解析异步组件(同样会返回一个导航守卫函数的签名，但是用不到 to,from 这 2 个参数)
     )
 
     this.pending = route
@@ -367,6 +367,11 @@ function bindEnterGuard (
   }
 }
 
+
+
+
+
+
 function poll (
   cb: any, // somehow flow cannot infer this is a function
   instances: Object,
@@ -386,3 +391,4 @@ function poll (
     }, 16)
   }
 }
+
