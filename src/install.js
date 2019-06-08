@@ -12,10 +12,11 @@ export function install (Vue) {
 
   const isDef = v => v !== undefined
 
-  //注册组件实例（src/components/view.js:60）
+  // 注册组件实例（src/components/view.js:65）
+  // 当组件被初始化后进入 beforeCreate 钩子时，才会有组件实例，这时候才会执行 registerInstance
   const registerInstance = (vm, callVal) => {
-    //i为router-view组件占位符vnode
-      // 这里会执行registerRouteInstance，将当前组件实例赋值给匹配到的路由记录（用于beforeRouteEnter的回调获取vm实例）
+      // i为 router-view 组件占位符 vnode
+      // 这里会执行 registerRouteInstance，将当前组件实例赋值给匹配到的路由记录（用于beforeRouteEnter的回调获取vm实例）
     let i = vm.$options._parentVnode
     if (isDef(i) && isDef(i = i.data) && isDef(i = i.registerRouteInstance)) {
       i(vm, callVal)
@@ -54,6 +55,8 @@ export function install (Vue) {
   })
 
     // 定义$router指向当前的路由
+    // 指向根实例的 _route 属性，当 router-view 被生成时，会触发 $route 的 getter 函数
+    // 同时会给 _route 收集到当前的渲染 watcher
   Object.defineProperty(Vue.prototype, '$route', {
     get () { return this._routerRoot._route }
   })

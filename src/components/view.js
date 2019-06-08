@@ -19,6 +19,8 @@ export default {
     const h = parent.$createElement
       // name为命名视图的 name 默认为 default
     const name = props.name
+    /** 这个时候会触发 _route 的 getter，收集当前的渲染 watcher（src/install.js:40）  **/
+        // 因为此时是 parent 组件，所以 Dep.target 为 parent 组件的渲染 watcher
     const route = parent.$route
     const cache = parent._routerViewCache || (parent._routerViewCache = {})
 
@@ -29,6 +31,7 @@ export default {
     while (parent && parent._routerRoot !== parent) {
       // depth 表示router-view的深度，当当前router-view的parent又是一个router-view时，当前的router-view深度就会+1
       // 默认是0，当发生了router-view的嵌套关系时，里层的router-view的depth为1
+      // 根据 routes 配置项中的嵌套关系，来渲染对应的视图
       if (parent.$vnode && parent.$vnode.data.routerView) {
         depth++
       }
@@ -57,6 +60,8 @@ export default {
 
     // attach instance registration hook
     // this will be called in the instance's injected lifecycle hooks
+    // 将组件的instances属性等于 val 参数(src/install.js:37)
+    // 在执行 registerRouteInstance 时，已经可以获取到 vm 实例（因为是在组件的 beforeCreate 中被执行的，而此时已经生成了 vm 实例）
     data.registerRouteInstance = (vm, val) => {
       // val could be undefined for unregistration
       const current = matched.instances[name]
@@ -64,7 +69,6 @@ export default {
         (val && current !== vm) ||
         (!val && current === vm)
       ) {
-        // 将组件的instances属性等于 val 参数(src/install.js:37)
         matched.instances[name] = val
       }
     }
@@ -76,7 +80,7 @@ export default {
     }
 
     // resolve props
-      // 解析路由的参数
+      // 解析路由的参数并给组件通过 props 传参（在路由记录中会存在 props 属性）
     let propsToPass = data.props = resolveProps(route, matched.props && matched.props[name])
     if (propsToPass) {
       // clone to prevent mutation
