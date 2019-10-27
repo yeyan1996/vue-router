@@ -53,7 +53,8 @@ export default class VueRouter {
     }
     this.mode = mode
 
-      // 根据mode来新建不同的实例（HTML5History | HashHistory | AbstractHistory）给history属性
+    // 根据mode来新建不同的实例（HTML5History | HashHistory | AbstractHistory）给history属性
+    // 根据 history 的类型，采取不同的方式切换路由（108）
     switch (mode) {
       case 'history':
         this.history = new HTML5History(this, options.base)
@@ -84,7 +85,7 @@ export default class VueRouter {
     return this.history && this.history.current
   }
 
-  //初始化router实例
+  // 初始化router实例
   init (app: any /* Vue component instance */) {
     process.env.NODE_ENV !== 'production' && assert(
       install.installed,
@@ -117,8 +118,9 @@ export default class VueRouter {
       )
     }
 
-    // 注册回调，当history发生改变后会执行回调（src/history/base.js:222）
+    // 注册回调，当history发生改变后会执行回调（src/history/base.js:221）
     // 即修改_route属性，因为_route属性是一个视图依赖的响应式变量，所以会触发视图的重新渲染
+    // 至于触发 _route 的 setter 为什么会更新视图，请参考 router-view 组件
     history.listen(route => {
       this.apps.forEach((app) => {
         app._route = route

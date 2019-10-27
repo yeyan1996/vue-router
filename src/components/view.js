@@ -19,8 +19,12 @@ export default {
     const h = parent.$createElement
       // name为命名视图的 name 默认为 default
     const name = props.name
-    /** 这个时候会触发 _route 的 getter，收集当前的渲染 watcher（src/install.js:40）  **/
-        // 因为此时是 parent 组件，所以 Dep.target 为 parent 组件的渲染 watcher
+    /**
+     * 由于 _route 在 vue-router 初始化时变成了一个响应式对象
+     * 所以会触发 _route 的 getter，收集当前的渲染 watcher（src/install.js:40）
+     * 当 /src/index.js:126 路由跳转后，会触发其 setter，重新运行 render 函数更新视图
+     */
+    // 因为此时是 parent 组件，所以 Dep.target 为 parent 组件的渲染 watcher
     const route = parent.$route
     const cache = parent._routerViewCache || (parent._routerViewCache = {})
 
@@ -47,8 +51,8 @@ export default {
       return h(cache[name], data, children)
     }
 
-      // matched来自当前route的matched属性
-    //matched是一个数组，顺序由父 => 子（src/util/route.js:32），根据深度来返回对应的路由记录
+    // matched来自当前route的matched属性
+    // matched是一个数组，顺序由父 => 子（src/util/route.js:32），根据深度来返回对应的路由记录
     const matched = route.matched[depth]
     // render empty node if no matched route
     if (!matched) {

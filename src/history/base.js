@@ -68,13 +68,14 @@ export class History {
   transitionTo (/*跳转的路由信息*/location: RawLocation,/*成功回调*/ onComplete?: Function, onAbort?: Function) {
       // this是history路由实例（HashHistory | HTML5History）
       // this.router是vueRouter实例
-      // match方法会根据当前的location结合之前生成的路由映射表（nameMap,pathMap）生成route对象（src/create-matcher.js:31）
-      // current是切换前的route对象
+      // match方法会根据当前的location + 之前生成的路由映射表（nameMap,pathMap），生成$route对象（src/create-matcher.js:31）
+      // current是切换前的$route对象
     const route = this.router.match(location, this.current)
+    // 触发路由钩子
     this.confirmTransition(route, () => {
       this.updateRoute(route) //确认导航成功，更新视图以及执行afterEach钩子
 
-      //执行transitionTo成功的回调(src/index.js:116)
+      // 执行transitionTo成功的回调(src/index.js:116)
       onComplete && onComplete(route)
       this.ensureURL()
 
@@ -93,8 +94,8 @@ export class History {
       }
     })
   }
-  // transitionTo的核心
-  // 路由跳转中执行的函数，传入route对象，成功回调和失败回调
+  // transitionTo的核心，执行一系列路由钩子
+  // 传入route对象，成功回调和失败回调
   confirmTransition (route: Route, onComplete: Function, onAbort?: Function) {
     const current = this.current //切换前的route对象
     const abort = err => {
@@ -201,11 +202,14 @@ export class History {
           return abort()
         }
         this.pending = null
-          // 确认导航，执行onComplete回调，其中会在 $nextTick 后更新视图，以及执行afterEach钩子（74）
+        // 确认导航，执行onComplete回调，包含：
+        // $nextTick 后更新视图
+        // 执行afterEach钩子（74）
         onComplete(route)
         if (this.router.app) {
           /**在nextTick后执行 postEnterCbs 数组即 beforeRouteEnter 的next方法的参数（函数）**/
           /**因为此时 nextTick 队列中存在一个 render watcher 所以先执行 render watcher 更新视图，再执行 beforeRouteEnter 的回调**/
+          // 最终
           // 因此 beforeRouteEnter 需要通过回调传入this的值
           this.router.app.$nextTick(() => {
             postEnterCbs.forEach(cb => { cb() })
@@ -219,7 +223,7 @@ export class History {
   updateRoute (route: Route) {
     const prev = this.current
     this.current = route
-    /** 执行回调给route赋值，随即触发视图更新（src/index.js:124）*/
+    /** 执行回调给route赋值，随即触发视图更新（src/index.js:125）*/
     this.cb && this.cb(route)
     this.router.afterHooks.forEach(hook => {
       hook && hook(route, prev)
@@ -248,7 +252,6 @@ function normalizeBase (base: ?string): string {
 }
 
 /**计算出当前路由和跳转路由在路径上的相同点不同点，来执行不同的导航守卫*/
-
 function resolveQueue (
   current: Array<RouteRecord>,
   next: Array<RouteRecord>
@@ -259,6 +262,11 @@ function resolveQueue (
 } {
   let i
   const max = Math.max(current.length, next.length)
+  // i 为两个 current,next 中的分岔点
+  // i 前的两个数组的对应的路由记录是相同的
+  // i 后的不同
+  // 之所以能够使用这种算法来区分相同/不同的路由记录
+  // 是因为路由记录是由 routerConfig 转换过来的，而 routerConfig 是一棵树形结构
   for (i = 0; i < max; i++) {
     if (current[i] !== next[i]) {
       break

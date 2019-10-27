@@ -18,7 +18,7 @@ export function createMatcher (
   routes: Array<RouteConfig>, //routes为实例化vueRouter的路由列表
   router: VueRouter
 ): Matcher {
-   //创建路由映射表（ pathList,pathMap,nameMap）
+   /**创建路由映射表（ pathList,pathMap,nameMap）*/
   const { pathList, pathMap, nameMap } = createRouteMap(routes)
     // createMatcher会返回一个动态添加路由API
     // 原理是给已有的包含路由信息的路由映射表（pathList,pathMap,nameMap）再添加新增的routes
@@ -69,9 +69,9 @@ export function createMatcher (
       for (let i = 0; i < pathList.length; i++) {
         const path = pathList[i]
         const record = pathMap[path]
-          // 使用当前location.path和每个路由记录的正则属性进行匹配
+        // 使用当前 location 的 path 属性和每个路由记录的正则属性进行匹配
         if (matchRoute(record.regex, location.path, location.params)) {
-            /**创建route路由对象**/
+            /**结合 record 创建route路由对象**/
           return _createRoute(record, location, redirectedFrom)
         }
       }

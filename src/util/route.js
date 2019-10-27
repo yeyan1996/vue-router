@@ -5,7 +5,7 @@ import { stringifyQuery } from './query'
 
 const trailingSlashRE = /\/?$/
 
-// 创建route，也就是vue实例的$route对象
+// 创建$route对象
 export function createRoute (
   record: ?RouteRecord,
   location: Location,
@@ -56,7 +56,7 @@ export const START = createRoute(null, {
   path: '/'
 })
 
-// 根据当前路径匹配到的record生成一个match数组
+// 根据当前路径匹配到的 record 和它的所有父级生成一个match数组
 function formatMatch (record: ?RouteRecord): Array<RouteRecord> {
   const res = []
     // 递归遍历当前路由和所有父路由放入match数组中 [父=》子]
